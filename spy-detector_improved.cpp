@@ -23,7 +23,7 @@ int main() {
     cin >> t;
     
     vector<int> v;
-    for (int i = 0; i < t; ++i) 
+    while (t--)
     {
         cin >> n;
         v.resize(n);
