@@ -3,16 +3,16 @@ using namespace std;
 
 int main() {
 
-    string cf = "codeforces";
     int t;
-    char c;
-
     cin >> t;
 
     while (t--)
     {
+        string cf = "codeforces";
+        char c;
         cin >> c;
         size_t check = cf.find(c);
+
         if (check != string::npos)
             cout << "yes\n";
         else
