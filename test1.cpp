@@ -1,9 +1,14 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
 int main()
 {
+    ios::sync_with_stdio(0); cin.tie(0);
+
     int length;
     cin >> length;
 
@@ -15,26 +20,27 @@ int main()
     vector<int> arr(length);
     for (int x = 0; x < length; x++)
     {
-        cin >> arr[x];
-        possible[arr[x]] = -1;
+        cin >> num;
+        arr[x] = num;
+        possible[num] = 0;
     }
+
+    int max_num = *max_element(arr.begin(), arr.end()) + 1;
 
     for (int x = 0; x < length; x++)
     {
-        for (int y = arr[x]; y < *max_element(arr.begin(), arr.end()) + 1; y += arr[x])
+        for (int y = arr[x]; y < max_num; y += arr[x])
         {
-            // cout << "Possible.count(y) = " << possible.count(y) << '\n';
             if (possible.count(y))
             {
                 possible[y]++;
             }
         }
-        cout << "possible[y] = " << possible[arr[x]] << '\n';
     }
 
     // Print result
-    for (const auto &i: arr)
+    for (auto i : arr)
     {
-        cout << possible[i] << " ";
+        cout << possible[i] - 1 << " ";
     }
 }
