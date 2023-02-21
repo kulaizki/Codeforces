@@ -32,9 +32,7 @@ int main()
         for (int y = arr[x]; y < max_num; y += arr[x])
         {
             if (possible.count(y))
-            {
                 possible[y]++;
-            }
         }
     }
 
