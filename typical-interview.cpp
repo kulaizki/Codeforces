@@ -4,11 +4,11 @@ using namespace std;
 
 int main() {
 
-    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
     string fb;
     int c = 1;
-    
+
     while(fb.size() < 100) 
     {
         if(c % 3 == 0) fb += "F";
