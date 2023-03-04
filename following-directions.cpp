@@ -4,8 +4,7 @@ using namespace std;
 
 void solve() {
    
-    int n;
-    string s;
+    int n; string s;
     cin >> n >> s;
 
     int x = 0, y = 0;
