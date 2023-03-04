@@ -7,11 +7,12 @@ void solve() {
     int n;
     cin >> n;
 
-    int x, y;
+    int cur = 1, a = 0, b = 0;
 
+    // in progress
     for (int i = 0; i < n; ++i)
     {
-        
+
     }
 }
 
@@ -23,5 +24,4 @@ int main() {
     cin >> t;
 
     while (t--) solve();
-
 }
