@@ -18,7 +18,7 @@ void solve() {
         
         if (x == 1 && y == 1) { cout << "YES\n"; return; }
     }
-
+    
     cout << "NO\n";
 }
 
