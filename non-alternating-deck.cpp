@@ -7,13 +7,33 @@ void solve() {
     int n;
     cin >> n;
 
-    int cur = 1, a = 0, b = 0;
+    int a = 1, b = 0; n--;
+    bool aliceTakes = false;
 
-    // in progress
-    for (int i = 0; i < n; ++i)
-    {
+    for (int i = 2; n > 0; i += 2) {
+        if (i+i+1 <= n) {
+            n -= (i+i+1);
+            if (aliceTakes) {
+                a += (i+i+1);
+            }
+            else {
+                b += (i+i+1);
+            }
+        }
+        else {
+            if (aliceTakes) {
+                a += n;
+            }
+            else {
+                b += n;
+            }
+            n = 0;
+        }
 
+        aliceTakes ^= true;
     }
+
+    cout << a << ' ' << b << '\n';
 }
 
 int main() {
