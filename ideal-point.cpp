@@ -11,6 +11,7 @@ void solve() {
     while (n--) {
         int l, r;
         cin >> l >> r;
+        // checks if k is in between l and r
         if (l <= k && k <= r) {
             L = max(L, l), R = min(R, r);
         }
