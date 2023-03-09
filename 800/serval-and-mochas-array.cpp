@@ -8,7 +8,7 @@ void solve() {
     cin >> n;
 
     vector<int> v(n);
-    for (int i = 0; i < n; ++i) 
+    for (int i = 0; i < n; ++i)
         cin >> v[i];
 
     int flag = 0;
@@ -21,7 +21,7 @@ void solve() {
         }
     }
 
-    (flag == 1) ? cout << "YES\n" : cout << "NO\n";
+    cout << (flag == 1 ? "YES\n" : "NO\n");
 }
 
 int main() {
