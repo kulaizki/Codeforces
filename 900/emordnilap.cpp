@@ -16,6 +16,9 @@ int main() {
     for (int i = 1; i < N; ++i) {
         fact[i] = fact[i-1] * i;
         fact[i] %= mod;
+        if (i <= 100) {
+            cout << i << ": " << fact[i] << '\n';
+        }
     }
 
     int t;
