@@ -19,7 +19,7 @@ void solve() {
         return;
     }
 
-    int C = a + 2 * (b - a);
+    int C = a + 2*(b - a);
     if (C >= c && C % c == 0 && C != 0) {
         cout << "YES\n";
         return;
