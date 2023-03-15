@@ -22,8 +22,6 @@ void solve() {
     ll ans = 0;
     for (int i = 0; i < n; ++i) {
         ans += a[i] - b[i];
-        cout << "a[i] " << a[i] << "\n";
-        cout << "b[i] " << b[i] << "\n\n";
     }
 
     cout << ans << "\n";
