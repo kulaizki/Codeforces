@@ -7,19 +7,20 @@ using namespace std;
 
 void solve() {
 
-    int a, b, c, d;
-    cin >> a >> b >> c >> d;
+    int n;
+    cin >> n;
 
-    if (d >= b && (a + (d - b)) >= c) {
-        int ans = 0;
-        ans += d - b;
-        a += d - b;
-        if (a > c) ans += a - c;
-        cout << ans << "\n";
+    vector<int> d(n);
+    for (auto& x: d) cin >> x;
+
+    vector<int> a(n);
+    a[0] = d[0];
+    for (int i = 1; i < n; ++i) {
+        a[i] = d[i] + a[i-1];
     }
-    else {
-        cout << -1 << "\n";
-    }
+
+    for (const auto& x: a) cout << x << " ";
+    cout << "\n";
 }
 
 int main() {
