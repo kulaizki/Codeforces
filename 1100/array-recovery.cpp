@@ -10,17 +10,25 @@ void solve() {
     int n;
     cin >> n;
 
-    vector<int> d(n);
-    for (auto& x: d) cin >> x;
-
-    vector<int> a(n);
-    a[0] = d[0];
-    for (int i = 1; i < n; ++i) {
-        a[i] = d[i] + a[i-1];
+    vector<ll> a = {0};
+    for (int i = 0; i < n; ++i) {
+        ll x;
+        cin >> x;
+        if (x != 0 && a.back() - x >= 0) {
+            cout << -1 << "\n";
+            return;
+        } 
+        else {
+            a.push_back(a.back() + x);
+        }
     }
 
-    for (const auto& x: a) cout << x << " ";
-    cout << "\n";
+    // in progress
+    for (int i = 1; i < a.size(); i++) {
+        cout << a[i] << " ";
+    }
+
+     cout << "\n";
 }
 
 int main() {
