@@ -4,37 +4,48 @@ using namespace std;
 
 #define activate {ios_base::sync_with_stdio(false);}
 #define mugen {cin.tie(NULL); cout.tie(NULL);}
-#define display(n)
 typedef long long ll;
 typedef long double lld;
 typedef unsigned long long ull;
 
-ll n, m, k, q, l, r, x, y, z;
 const ll template_array_size = 1e6 + 585;
 
 void solve(int tc = 0) {
 
+    int n, q;
     cin >> n >> q;
     vector<int> a(n);
-    vector<int> b(n);
-    for (auto &x: a) cin >> x;
-    b[0] = a[0];
-    for (ll i = 1; i < n; ++i) {
-        b[i] = a[i] + a[i - 1];
+
+    cin >> a[0];
+    int sum = a[0];
+    for (int i = 1; i < n; ++i) {
+        cin >> a[i];
+        a[i] += a[i-1];
     }
 
-    for (ll i = 0; i < q; ++i) {
-        ll sum = 0;
+
+    for (int i = 0; i < q; ++i) {
+        int l, r, k;
         cin >> l >> r >> k;
-        l--;
+        
+        int sum = 0;
+        sum += (r - l) * k;
+        sum += a[l];
+        sum += a[n-1] - a[r];
 
-        // sum += (r - l) * k;
-        sum += ((r - l) * k) + b[l] + (b[n-1] - b[r]);
-
+        if (sum % 2) {
+            cout << "YES\n";
+        } else {
+            cout << "NO\n";
+        }
+        
+        for (const auto& x : a) cout << x << ' ';
+        cout << "\nl: " << l << " r: " << r << " k: " << k << "\n";
+        cout << "sum: " << sum << "\n";
         // for (ll i = 0; i < l; ++i) sum += a[i]; (not efficient enough)
         // for (ll i = r; i < n; ++i) sum += a[i];
 
-        cout << (sum % 2 != 0 ? "YES\n" : "NO\n");
+        // cout << (sum % 2 != 0 ? "YES\n" : "NO\n");
     }    
 }
 
