@@ -31,7 +31,7 @@ void solve(int tc = 0) {
         // sum += (r - l) * k;
         sum += ((r - l) * k) + b[l] + (b[n-1] - b[r]);
 
-        // for (ll i = 0; i < l; ++i) sum += a[i];
+        // for (ll i = 0; i < l; ++i) sum += a[i]; (not efficient enough)
         // for (ll i = r; i < n; ++i) sum += a[i];
 
         cout << (sum % 2 != 0 ? "YES\n" : "NO\n");
