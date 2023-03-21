@@ -4,6 +4,7 @@ using namespace std;
 
 #define activate {ios_base::sync_with_stdio(false);}
 #define mugen {cin.tie(NULL); cout.tie(NULL);}
+#define poof(a) {for (const auto& x : a) cout << x << ' '; cout << '\n';}
 typedef long long ll;
 typedef long double lld;
 typedef unsigned long long ull;
@@ -22,7 +23,8 @@ void solve(int tc = 0) {
         a[i] %= 2;
         s += a[i];
     }
-
+    
+    // prefix sum
     vector<int> p(n + 1);
     for (int i = 0; i < n; ++i) {
         p[i + 1] = p[i] + a[i];
