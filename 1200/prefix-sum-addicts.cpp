@@ -21,21 +21,21 @@ void solve(int tc = 0) {
     int n, k;
     cin >> n >> k;
 
+    vector<ll> s(n + 1);
+    for (int i = n - k + 1;  i <= n; ++i) {
+        cin >> s[i];
+    }
     if (k == 1) {
         cout << "YES\n";
         return;
     }
 
-    vector<ll> s(n + 1);
-    for (int i = n - k + 1;  i <= n; ++i) {
-        cin >> s[i];
-    }
     vector<ll> a(n + 1);
     for (int i = n - k + 2; i <= n; ++i) {
         a[i] = s[i] - s[i - 1];
     }
 
-    if (!is_sorted(a.begin() + n - k + 2, a.end())); {
+    if (!is_sorted(a.begin() + n - k + 2, a.end())) {
         cout << "NO\n";
         return;
     }
