@@ -20,23 +20,24 @@ void solve(int tc = 0) {
     int n; cin >> n;
     string s; cin >> s;
 
-    ll tot = 0;
+    ll sum = 0;
 	vector<ll> v;
 	for (int i = 0; i < n; i++) {
 		if (s[i] == 'L') {
 			v.push_back((n - 1 - i) - i);
-			tot += i;
-		}
-		else {
+			sum += i;
+		} else {
 			v.push_back(i - (n - 1 - i));
-			tot += n - 1 - i;
+			sum += n - 1 - i;
 		}
 	}
+
 	sort(v.rbegin(), v.rend());
 	for (int i = 0; i < n; i++) {
-		if (v[i] > 0) {tot += v[i];}
-		cout << tot << ' ';
+		if (v[i] > 0) {sum += v[i];}
+		cout << sum << ' ';
 	}
+
 	cout << '\n';
 }
 
