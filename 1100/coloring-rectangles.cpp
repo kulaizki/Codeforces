@@ -20,7 +20,7 @@ void solve(int tc = 0) {
     int n, m;
     cin >> n >> m;
     int x = n * m;
-    int y = (n * m) % 3;
+    int y = n * m % 3;
 
     cout << (y == 0 ? x / 3 : x / 3 + 1) << '\n';
 }
