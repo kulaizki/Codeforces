@@ -15,18 +15,24 @@ int main() {
     }
 
     int ans = 0;
-    for (int i = 0; i < n && ans != 1; ++i) {
-        for (int j = 0; j < m && ans != 1; ++j) {
-            if (v[n][m] == '*') {
+    for (int i = 0; i < n && ans == 0; ++i) {
+        for (int j = 0; j < m && ans == 0; ++j) {
+            if (v[i][j] == '.') {
+                if (i > 0 && j > 0 && i <  n - 1 && j < m - 1) {
+                    if (v[i - 1][j - 1] == '*' || v[i - 1][j] == '*' || 
+                        v[i - 1][j + 1] == '*' || v[i][j - 1] == '*' ||
+                        v[i][j + 1] == '*' || v[i + 1][j - 1] == '*' ||
+                        v[i + 1][j] == '*' || v[i + 1][j + 1] == '*') {
+                            ans = 1;
+                    }
+                }
+            } else if (v[i][j] != '*') {
+                // for (int k = 0; k < 8; k++) {
 
-            } else if (v[n][m] == '.') {
-
-            } else {
-                int bombs = 0;
-                while ()
+                // }
             }
         }
     }
 
-    cout << (ans == 0) ? "YES" : "NO";
+    cout << (ans == 0 ? "YES" : "NO");
 }
