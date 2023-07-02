@@ -22,7 +22,6 @@ void solve(int tc = 0) {
 
     x = string(r.size() - l.size(), '0') + l;
     
-
     int ans = 0;
 
     if (l == r) {
@@ -34,7 +33,6 @@ void solve(int tc = 0) {
         ans = (r.size() - i - 1) * 9 + remainder;
         cout << ans << '\n';
     }
-
 }
 
 int main() {
