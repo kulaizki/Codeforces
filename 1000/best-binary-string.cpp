@@ -18,7 +18,6 @@ const lld pi = 3.14159265358979323846;
 void solve(int tc = 0) {
 
     string s; cin >> s;
-
     char x = '0';
 
     for (auto& c : s) {
