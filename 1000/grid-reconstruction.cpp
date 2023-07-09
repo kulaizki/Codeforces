@@ -25,6 +25,7 @@ void solve(int tc = 0) {
     ans[1][1] = 2 * n - 1;
     ans[2][n] = 2 * n;
 
+    // top-right diagonal constructor up = i, down = i - 1
     for (int i = 2; i <= n; i++) {
         if (i % 2 == 0) {
             ans[1][i] = i;
