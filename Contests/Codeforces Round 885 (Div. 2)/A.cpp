@@ -19,18 +19,18 @@ void solve(int tc = 0) {
     int n, m, k, x, y;
     cin >> n >> m >> k >> x >> y;
 
-    int u = 0, d = 0, l = 0, r = 0;
-
+    bool valid = true;
     for (int i = 0; i < k; ++i) {
         int xi, yi;
         cin >> xi >> yi;
-        if (abs(xi - x - 1) + abs(yi - y) == 1) u = 1;
-        if (abs(xi - x + 1) + abs(yi - y) == 1) d = 1;
-        if (abs(xi - x) + abs(yi - y - 1) == 1) l = 1;
-        if (abs(xi - x) + abs(yi - y + 1) == 1) r = 1;
+        int dx = abs(x - xi);
+        int dy = abs(y - yi);
+        if ((dx + dy) % 2 == 0) {
+            valid = false;
+        }
     }
 
-    cout << (k > 2 || (u + d + l + r) > 1 ? "NO\n" : "YES\n");
+    cout << (valid ? "YES\n" : "NO\n");
 }
 
 int main() {
