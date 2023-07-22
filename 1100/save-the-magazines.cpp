@@ -4,6 +4,8 @@ using namespace std;
 
 #define kulaizki {ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 #define poof(a) {for (const auto& x : a) cout << x << ' ';}
+#define pb push_back
+
 typedef long long ll;
 typedef long double lld;
 typedef unsigned long long ull;
@@ -15,22 +17,31 @@ const lld pi = 3.14159265358979323846;
 // ll mod;
 
 void solve(int tc = 0) {
-    int n, k;
-    cin >> n >> k;
+
+    int n; cin >> n;
+    string s; cin >> s;
 
     vector<ll> v(n);
-    for (auto &x : v)
-        cin >> x;
-    sort(v.begin(), v.end());
+    for (auto& x : v) cin >> x;
 
     ll ans = 0;
-    vector<ll> pr(n + 1);
-    for (int i = 0; i < n; i++)
-        pr[i + 1] = pr[i] + v[i];
-
-    for (int i = 0; i <= k; i++)
-        ans = max(ans, pr[n - (k - i)] - pr[2 * i]);
-
+    if (s[0] == '1') ans = v[0];
+    for (int i = 1; i < n; ++i) {
+        if (s[i] == '1') {
+            int mx = i;
+            for (int j = i-1; j >= 0; --j) {
+                if (s[j] == '0' && v[j] > v[mx]) {
+                    mx = j;
+                }
+            }
+            if (mx != i) {
+                s[i] = '0';
+                s[mx] = '1';
+            }
+            ans += v[mx];
+        }
+    }
+    
     cout << ans << '\n';
 }
 

@@ -2,8 +2,9 @@
 
 using namespace std;
 
-#define kulaizki {ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
+#define activate {ios_base::sync_with_stdio(false);}
 #define poof(a) {for (const auto& x : a) cout << x << ' ';}
+#define mugen {cin.tie(NULL); cout.tie(NULL);}
 typedef long long ll;
 typedef long double lld;
 typedef unsigned long long ull;
@@ -15,28 +16,14 @@ const lld pi = 3.14159265358979323846;
 // ll mod;
 
 void solve(int tc = 0) {
-    int n, k;
-    cin >> n >> k;
 
-    vector<ll> v(n);
-    for (auto &x : v)
-        cin >> x;
-    sort(v.begin(), v.end());
 
-    ll ans = 0;
-    vector<ll> pr(n + 1);
-    for (int i = 0; i < n; i++)
-        pr[i + 1] = pr[i] + v[i];
 
-    for (int i = 0; i <= k; i++)
-        ans = max(ans, pr[n - (k - i)] - pr[2 * i]);
-
-    cout << ans << '\n';
 }
 
 int main() {
 
-    kulaizki
+    activate mugen
     int tc = 1;
     cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
