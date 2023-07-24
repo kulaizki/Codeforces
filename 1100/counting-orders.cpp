@@ -12,40 +12,29 @@ typedef unsigned long long ull;
 
 const ll template_array_size = 1e6 + 585;
 const lld pi = 3.14159265358979323846;
-// const ll mod = 1000000007;
+const ll mod = 1000000007;
 // const ll mod = 998244353;
 // ll mod;
 
 void solve(int tc = 0) {
 
-    int n; 
-    cin >> n;
-    string s = "0", t;
-    cin >> t;
-    s += t;
+    int n; cin >> n;
 
-    vector<ll> v(n+1);
-    v[0] = 0;
-    for (int i = 1; i <= n; ++i) {
-        cin >> v[i];
+    vector<int> a(n);
+    for (auto &x : a) cin >> x;
+    sort(a.begin(), a.end());
+
+    vector<int> b(n);
+    for (auto &x : b) cin >> x;
+    sort(b.begin(), b.end(), greater<>());
+
+    ll result = 1;
+    for (int i = 0; i < n; ++i) {
+        int geq_count = a.size() - (upper_bound(a.begin(), a.end(), b[i]) - a.begin());
+        result = result * max(geq_count - i, 0) % mod;
     }
 
-    ll ans = 0;
-    int i = 0;
-    while (i <= n) {
-        ll mn = v[i];
-        ll sm = v[i];
-        int j = i+1;
-        while (j <= n && s[j] == '1') {
-            mn = min(mn, v[j]);
-            sm += v[j];
-            j++;
-        }
-        ans += sm - mn;
-        i = j;
-    }
-
-    cout << ans << '\n';
+    cout << result << "\n";
 }
 
 int main() {
