@@ -21,23 +21,34 @@ void solve(int tc = 0) {
     int n;
     cin >> n;
 
-    vector<int> a(n);
-    for (auto &x : a) cin >> x;
-
+    vector<ll> a(n), e, o;
     for (int i = 0; i < n; ++i) {
-        int min = i;
-        for (int j = i; j < n; ++j) {
-            if (i != j) {
-                if ((a[i] % 2 == a[j] % 2) && a[j] < a[min]) {
-                    min = j;
-                }
-            }
+        cin >> a[i];
+        if (a[i] % 2 == 0) {
+            e.push_back(a[i]);
+        } 
+        else {
+            o.push_back(a[i]);
         }
-        swap(a[i], a[min]);
+    }
+
+    sort(e.begin(), e.end());
+    sort(o.begin(), o.end());
+
+    vector<ll> b(n); 
+    int e_idx = 0;
+    int o_idx = 0;
+    for (int i = 0; i < n; ++i) {
+        if (a[i] % 2 == 0) {
+            b[i] = e[e_idx++];
+        }
+        else {
+            b[i] = o[o_idx++];
+        }
     }
 
     int x;
-    for (x = 0; x < n-1 && a[x] <= a[x+1]; ++x) {}
+    for (x = 0; x < n-1 && b[x] <= b[x+1]; ++x) {}
 
     cout << (x == n-1 ? "YES\n" : "NO\n");
 }
