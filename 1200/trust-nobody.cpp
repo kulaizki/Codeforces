@@ -22,17 +22,21 @@ void solve(int tc = 0) {
     cin >> n;
 
     vector<int> l(n);
-    set<int> s;
-    int mn = INT_MAX;
-    for (int i = 0; i < n; ++i) {
-        cin >> l[i];
-        mn = min(l[i], mn);
-        s.insert(l[i]);
+    for (auto &x : l) cin >> x;
+    int ans = -1;
+    for (int i = 0; i <= n && ans != i; ++i) {
+        int c = 0;
+        for (int j = 0; j < n; ++j) {
+            if (l[j] > i) {
+                c++;
+            }
+        }
+        if (c == i) {
+            ans = i;
+        }
     }
 
-    int c = count(l.begin(), l.end(), mn);
-
-    cout << (c == n && s.size() ? -1 : n - c) << '\n';
+    cout << ans << '\n';
 }
 
 int main() {
