@@ -17,24 +17,36 @@ const lld pi = 3.14159265358979323846;
 // ll mod;
 
 void solve(int tc = 0) {
-
+    
     int n, m, k;
     cin >> n >> m >> k;
 
-    int g[n][n] = {0};
-
-    int d = 0;
-    for (int i = 0; i < n && k; ++i) {
-        for (int j = 0; j < n && k; ++j) {
-            if (i != j && k) {
-                g[i][j]++;
-                d = max(g[i][j], d);
-                k--;
-            }
-        }
+    if ((n - 1ll) * n >> 1 < m || m < n - 1) {
+        cout << "NO" << '\n';
+        return;
     }
 
-    cout << (d < k - 1 ? "YES\n" : "NO\n") << "D: " << d << '\n';
+    if (n == 1) {
+        if (k > 1) {
+            cout << "YES\n";
+        } 
+        else {
+            cout << "NO\n";
+        }
+    } 
+    else if (m < (n - 1ll) * n >> 1) {
+        if (k > 3) {
+            cout << "YES\n";
+        } else {
+            cout << "NO\n";
+        }
+    } 
+    else if (k > 2) {
+        cout << "YES\n";
+    } 
+    else {
+        cout << "NO\n";
+    }
 }
 
 int main() {
