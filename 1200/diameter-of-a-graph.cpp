@@ -26,25 +26,17 @@ void solve(int tc = 0) {
         return;
     }
 
-    if (n == 1) {
-        if (k > 1) {
-            cout << "YES\n";
-        } 
-        else {
-            cout << "NO\n";
-        }
-    } 
-    else if (m < (n - 1ll) * n >> 1) {
+    if (n == 1 && k > 1) {
+         cout << "YES\n";
+    } else if (m < (n - 1ll) * n >> 1) {
         if (k > 3) {
             cout << "YES\n";
         } else {
             cout << "NO\n";
         }
-    } 
-    else if (k > 2) {
+    } else if (k > 2) {
         cout << "YES\n";
-    } 
-    else {
+    } else {
         cout << "NO\n";
     }
 }
