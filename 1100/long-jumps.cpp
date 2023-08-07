@@ -24,16 +24,16 @@ void solve(int tc = 0) {
     vector<ll> a(n);
     for (auto &x : a) cin >> x;
 
-    ll ans = 0;
-    for (int i = 0; i < n; ++i) {
-        ll score = 0;
-        for (int j = i; j < n; j += a[j]) {
-            score += a[j];
+    vector<int> dp(n);
+    for (int i = n - 1; i >= 0; i--) {
+        dp[i] = a[i];
+        int j = i + a[i];
+        if (j < n) {
+            dp[i] += dp[j];
         }
-        ans = max(score, ans);
     }
 
-    cout << ans << '\n';
+    cout << *max_element(dp.begin(), dp.end()) << '\n';
 }
 
 int main() {
