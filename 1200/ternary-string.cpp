@@ -22,26 +22,25 @@ void solve(int tc = 0) {
     cin >> s;
 
     int ans = 200001;
-    bool e[3];
-    for (int i = 0; i < s.size(); ++i) {
-        e[0] = false;
-        e[1] = false;
-        e[2] = false;
-        for (int j = i; j < s.size(); ++j) {
-            if (s[j] == '1') {
-                e[0] = true;
-            } else if (s[j] == '2') {
-                e[1] = true;
-            } else {
-                e[2] = true;
-            }
-        }
-        if (e[0] == 1 && e[1] == 1 && e[2] == 1) {
-            ans = min((int)s.size() - i, ans);
+    int n = s.size();
+
+    vector<pair<char, int>> c;
+    for (const auto &x : s) {
+        if (c.empty() || c.back().first != x) {
+            c.push_back(make_pair(x, 1));
+        } else {
+            c.back().second++;
         }
     }
 
-    cout << (ans == 200001 ? '0' : ans) << '\n';
+    int m = c.size();
+    for (int i = 1; i < m - 1; ++i) {
+        if (c[i - 1].first != c[i + 1].first) {
+            ans = min(c[i].second + 2, ans);
+        }
+    }
+
+    cout << (ans > n ? 0 : ans) << '\n';
 }
 
 int main() {
