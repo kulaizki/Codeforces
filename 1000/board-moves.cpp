@@ -22,12 +22,13 @@ void solve(int tc = 0) {
     cin >> n;
 
     ll ans = 0;
-    while (n > 1) {
-        ans += ((n / 2) * 8) * (n / 2);
-        n -= 2;
+    n /= 2;
+
+    for (int i = 1; i <= n; ++i) {
+        ans += i * 1ll * i;
     }
 
-    cout << ans << '\n';
+    cout << ans * 8 << '\n';
 }
 
 int main() {
