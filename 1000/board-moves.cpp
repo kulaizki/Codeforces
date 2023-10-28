@@ -24,8 +24,8 @@ void solve(int tc = 0) {
     ll ans = 0;
     n /= 2;
 
-    for (int i = 1; i <= n; ++i) {
-        ans += i * 1ll * i;
+    for (ll i = 1; i <= n; ++i) {
+        ans += i * i;
     }
 
     cout << ans * 8 << '\n';
