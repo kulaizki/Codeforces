@@ -2,9 +2,8 @@
 
 using namespace std;
 
-#define activate {ios_base::sync_with_stdio(false);}
+#define kulaizki {ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 #define poof(a) {for (const auto& x : a) cout << x << ' ';}
-#define mugen {cin.tie(NULL); cout.tie(NULL);}
 typedef long long ll;
 typedef long double lld;
 typedef unsigned long long ull;
@@ -37,7 +36,7 @@ void solve(int tc = 0) {
 
 int main() {
 
-    activate mugen
+    kulaizki
     int tc = 1;
     cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);

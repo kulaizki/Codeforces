@@ -18,24 +18,17 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    int n;
-    cin >> n;
-    
-    string s;
-    cin >> s;
-    
-    set<string> cnt;
-    for (int i = 1; i < n; i++) {
-        cnt.insert(s.substr(i-1, 2));
-    }
-    
-    cout << cnt.size() << '\n';
+    double k, n, s, p;
+    cin >> k >> n >> s >> p;
+
+    double ans = ceil(n / s);
+    cout << int(ceil(ans * k / p)) << '\n';
 }
 
 int main() {
 
     kulaizki
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
 }
