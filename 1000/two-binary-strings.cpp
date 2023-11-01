@@ -22,7 +22,7 @@ void solve(int tc = 0) {
     cin >> a >> b;
 
     bool flag = false;
-    for (int i = 0; i < a.size() && !flag; ++i) {
+    for (int i = 0; i + 1 < a.size() && !flag; ++i) {
         if (a[i] == b[i] && a[i] == '0' && a[i + 1] == b[i + 1] && a[i + 1] == '1') {
             flag = true;
         }
