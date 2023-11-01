@@ -4,6 +4,7 @@ using namespace std;
 
 int main() {
 
+    // string test
     string s = "abc";
     string t = "abc";
 
