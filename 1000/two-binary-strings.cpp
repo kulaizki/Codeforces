@@ -18,25 +18,17 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    string s, t;
-    cin >> s >> t;
+    string a, b;
+    cin >> a >> b;
 
-    bool flag = false;    
-    if (s == t) {
-        flag = true;
-    } else {
-        string x = s;
-        int i;
-        for (i = s.size() - 2; i > 0 && s[i] != '0'; --i) {}
-        while (i-- > 0) x[i] = '0';
-        if (s == t) {
+    bool flag = false;
+    for (int i = 0; i < a.size() && !flag; ++i) {
+        if (a[i] == b[i] && a[i] == '0' && a[i + 1] == b[i + 1] && a[i + 1] == '1') {
             flag = true;
-        } else {
-            // check others;
         }
-
     }
 
+    cout << (flag ? "YES\n" : "NO\n");
 }
 
 int main() {
