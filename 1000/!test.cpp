@@ -4,6 +4,12 @@ using namespace std;
 
 int main() {
 
-    cout << 27 % 11;
-    
+    string s = "abc";
+    string t = "abc";
+
+    cout << ("abcn" == "abc");
+    cout << (s == t) << '\n';
+
+    string x = s;
+    cout << x;
 }
