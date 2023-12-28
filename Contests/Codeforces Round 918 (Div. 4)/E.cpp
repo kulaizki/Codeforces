@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <math.h>
 
 using namespace std;
 
@@ -12,7 +11,7 @@ typedef long double lld;
 typedef unsigned long long ull;
 
 const ll template_array_size = 1e6 + 585;
-const lld pi = 3.14159265358979323846;
+const lld pi = 3.141592653589793238462;
 // const ll mod = 1000000007;
 // const ll mod = 998244353;
 // ll mod;
@@ -22,17 +21,28 @@ void solve(int tc = 0) {
     ll n;
     cin >> n;
 
-    ll x, sum = 0;
-    for (int i = 0; i < n; ++i) {
-        cin >> x;
-        sum += x;
+    vector<ll> v(n + 1);
+    for (ll i = 1; i <= n; ++i) cin >> v[i];
+
+    unordered_map<ll, ll> diff;
+    ll a = 0, b = 0;
+    string ans = "NO";
+
+    for (ll i = 1; i <= n; ++i) {
+        if (i & 1) {
+            b += v[i];
+        } else {
+            a += v[i];
+        }
+        ll curr_diff = b - a;
+        if (curr_diff == 0 || diff.find(curr_diff) != diff.end()) {
+            ans = "YES";
+            break;
+        }
+        diff[curr_diff] = 1;
     }
 
-    if (ceil((double)sqrt(sum)) == floor((double)sqrt(sum))) {
-        cout << "YES\n";
-    } else {
-        cout << "NO\n";
-    }
+    cout << ans << '\n';
 }
 
 int main() {
