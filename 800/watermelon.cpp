@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -18,14 +20,15 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    cout << "test";
-
+    int x;
+    cin >> x;
+    cout << ((x % 2 == 0 && x != 2) ? "YES" : "NO") << '\n';
 }
 
 int main() {
 
     kulaizki
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
 }
