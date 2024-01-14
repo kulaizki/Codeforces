@@ -8,10 +8,11 @@ using namespace std;
 typedef long long ll;
 
 void solve(int tc = 0) {
-    int n, m, a;
+
+    double n, m, a;
     cin >> n >> m >> a;
 
-    ll neededFlagstones = ceil(static_cast<double>(n) / a) * ceil(static_cast<double>(m) / a);
+    ll neededFlagstones = ceil(n / a) * ceil(m / a);
 
     cout << neededFlagstones << '\n';
 }
