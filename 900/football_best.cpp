@@ -21,13 +21,10 @@ void solve(int tc = 0) {
     string s;
     cin >> s;
 
-    int n = s.size();
-    int x = 1;
-    for (int i = 1; i < n && x < 7; ++i) {
-        (s[i] == s[i - 1]) ? x++ : x = 1;
-    }
-
-    cout << (x == 7 ? "YES" : "NO");
+    int i, n = s.size() - 6;
+    for (i = 0; i < n && (s.substr(i, 7) != "0000000" && s.substr(i, 7) != "1111111"); ++i) {}
+    
+    cout << (i < n ? "YES" : "NO");
 }
 
 int main() {
