@@ -26,16 +26,19 @@ void solve(int tc = 0) {
         for (auto& x : n) cin >> x;
     }
 
-    int ans = 0;
-    for (int k = 0; k < m; ++k) {
-        for (int i = 0; i < n - 1; ++i) {
-            for (int j = i + 1; j < n; ++j) {
-                ans += abs(v[i][k] - v[j][k]);
-            }
+    int cnt = 0;
+    for (int i = 0; i < m-1; ++i) {
+        vector<int> tmp;
+        for (int j = 0; j < n-1; ++j)
+            tmp.push_back(v[i][j]);
+        sort(tmp.begin(), tmp.end());
+        for (int j = 0; j < n-1; ++j) {
+            cnt += i * tmp[i];
+            cnt -= (n-i-1) * tmp[i];
         }
     }
 
-    cout << ans << '\n';
+    cout << cnt << '\n';
 }
 
 int main() {

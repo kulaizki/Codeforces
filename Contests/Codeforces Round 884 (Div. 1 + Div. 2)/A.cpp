@@ -14,7 +14,7 @@ const lld pi = 3.14159265358979323846;
 // const ll mod = 998244353;
 // ll mod;
 
-void solve(int tc = 0) {
+    void solve(int tc = 0) {
 
     int a, b;
     cin >> a >> b;

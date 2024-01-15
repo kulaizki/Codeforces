@@ -18,20 +18,8 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    ll a, b, x, y, n;
-    cin >> a >> b >> x >> y >> n;
+        
 
-    ll ans = 1e18;
-    
-    for (int i = 0; i < 2; ++i) {
-        int da = min(n, a - x);
-        int db = min(n, b - y);
-        ans = min(ans, (a - da) * 1ll * (b - db));
-        swap(a, b);
-        swap(a, x);
-    }
-
-    cout << ans << '\n';
 }
 
 int main() {
