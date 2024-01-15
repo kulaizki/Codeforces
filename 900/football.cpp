@@ -27,11 +27,7 @@ void solve(int tc = 0) {
     auto a = search(s.begin(), s.end(), x.begin(), x.end());
     auto b = search(s.begin(), s.end(), y.begin(), y.end());
 
-    if (a != s.end() || b != s.end()) {
-        cout << "YES\n";
-    } else {
-        cout << "NO\n";
-    }
+    cout << (a != s.end() || b != s.end() ? "YES" : "NO");
 }
 
 int main() {
