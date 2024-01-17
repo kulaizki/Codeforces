@@ -21,16 +21,14 @@ void solve(int tc = 0) {
     ll n, k;
     cin >> n >> k;
 
-    if (k % 2 == 0) {
-        
-    }
-
+    cout << (k <= (n + 1) / 2 ? k * 2 - 1 : (k - (n + 1) / 2) * 2);
+    
 }
 
 int main() {
 
     kulaizki
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
 }
