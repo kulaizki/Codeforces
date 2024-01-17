@@ -21,17 +21,22 @@ void solve(int tc = 0) {
     ll n, k;
     cin >> n >> k;
 
-    vector<int> v(n);
-    for (int i = 0, x = 1; i < n && ; ++i, x += 2) {
+    vector<ll> v(n);
+    ll i = 0;
+    for (ll x = 1; x <= n; ++i, x += 2) {
+        v[i] = x;
+    }
+    for (ll x = 2; x <= n; ++i, x += 2) {
         v[i] = x;
     }
 
+    cout << v[k - 1];
 }
 
 int main() {
 
     kulaizki
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
 }
