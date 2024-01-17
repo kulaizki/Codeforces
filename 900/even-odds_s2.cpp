@@ -22,7 +22,6 @@ void solve(int tc = 0) {
     cin >> n >> k;
 
     cout << (k <= (n + 1) / 2 ? k * 2 - 1 : (k - (n + 1) / 2) * 2);
-    
 }
 
 int main() {
