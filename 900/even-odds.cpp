@@ -22,9 +22,8 @@ void solve(int tc = 0) {
     cin >> n >> k;
 
     vector<int> v(n);
-    int x = 1;
-    for (int i = 0; i < n; ++i) {
-        v[i] = x += 2;
+    for (int i = 0, x = 1; i < n && ; ++i, x += 2) {
+        v[i] = x;
     }
 
 }
