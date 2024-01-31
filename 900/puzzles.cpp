@@ -23,18 +23,16 @@ void solve(int tc = 0) {
     int n, m;
     cin >> n >> m;
 
-    int mn, mx;
-    cin >> mn;
-    mx = mn;
-    n--;
-    for (int i = 0; i < n; ++i) {
-        int x;
-        cin >> x;
-        mn = min(x, mn);
-        mx = max(x, mx);
+    vector<int> f(m);
+    for (auto &x : f) cin >> x;
+    sort(f.begin(), f.end());
+
+    int best = INT_MAX;
+    for (int k = 0; k <= m - n; ++k) {
+        best = min(best, f[k + n - 1] - f[k]);
     }
 
-    cout << mx - mn << '\n';
+    cout << best << '\n';
 }
 
 int main() {
