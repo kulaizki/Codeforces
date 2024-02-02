@@ -30,9 +30,13 @@ void solve(int tc = 0) {
     for (auto &x : b) cin >> x;
 
     for (int i = 0; i < q; ++i) {
-        int j, c;
-        for (j = 0, c = 0; j < n && b[i] >= a[j]; ++j, c++) {}
-        cout << c << '\n';
+        int l = 0, m, r = a.size();
+        while (l < r) {
+            m = (l + r) / 2;
+            if (a[m] <= b[i]) l = m + 1;
+            else r = m;
+        }
+        cout << (l > 0 ? l : 0) << '\n';
     }
 }
 
