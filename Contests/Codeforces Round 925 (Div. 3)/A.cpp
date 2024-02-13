@@ -20,22 +20,19 @@ void solve(int tc = 0) {
     int n;
     cin >> n;
 
-    int cnt = 0;
-    while (n >= 28) {
-        n -= 26;
-        cnt++;
-    }
+    int c;
+    for (c = 0; n >= 28; ++c, n -= 26) {}
 
     string s;    
-    if (cnt == 1) {
+    if (c == 1) {
         s[2] = 'z';
         s[1] = char('a' + n - 2);
         s[0] = 'a';
-    } else if (cnt == 2) {
+    } else if (c == 2) {
         s[2] = 'z';
         s[1] = 'z';
         s[0] = char('a' + n - 1);
-    } else if (cnt == 0) {
+    } else if (c == 0) {
         s[2] = char('a' + n - 3);
         s[1] = 'a';
         s[0] = 'a';
