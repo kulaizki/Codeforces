@@ -17,7 +17,6 @@ const ll template_array_size = 1e6 + 585;
 const lld pi = 3.14159265358979323846;
 // const ll mod = 1000000007;
 // const ll mod = 998244353;
-// ll mod;
 
 void solve(int tc = 0) {
 
