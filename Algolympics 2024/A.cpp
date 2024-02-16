@@ -21,6 +21,7 @@ void solve(int tc = 0) {
 
     int r, c;
     cin >> r >> c;
+    
     vector<int> col(c, 0), row(r, 0);
     for (int i = 0; i < r; ++i) {
         for (int j = 0; j < c; ++j) {
