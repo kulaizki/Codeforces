@@ -20,7 +20,22 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    
+    int n;
+    cin >> n;
+
+    vector<int> v(n);
+    for (auto &x : v) cin >> x;
+
+    vector<int> res(n);
+    bool a[100000];
+    int greatest = INT_MIN;
+    for (int i = n - 1; i >= 0; ++i) {
+        a[v[i]] = 1;
+        greatest = max(v[i], greatest); 
+        for (int j = v[i]; j < greatest; ++j) {
+            if (a[j] == 1) res.push_back()
+        }
+    }
 
 }
 
