@@ -20,29 +20,8 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    int n;
-    cin >> n;
+    
 
-    vector<int> v(n);
-    for (auto &x : v) cin >> x;
-
-    for (int i = 0; i < n; ++i) {
-        vector<pair<int, int>> vi;
-        vi.clear();
-        for (int j = i + 1; j < n; ++j) {
-            if (v[j] > v[i]) vi.push_back(make_pair(j, v[j]));
-        }
-        if (vi.empty()) {
-            cout << i + 1 << ' ';
-        } else {
-            sort(vi.begin(), vi.end(), [](const auto& x, const auto& y) {
-                return x.second < y.second;
-            });
-            cout << vi[0].first + 1 << ' ';
-        }
-    }
-
-    cout << '\n';
 }
 
 int main() {
