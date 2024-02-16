@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <numeric>
 
 using namespace std;
 
@@ -20,13 +21,22 @@ void solve(int tc = 0) {
 
     int r, c;
     cin >> r >> c;
-
-    char a[r][c];
+    vector<int> col(c, 0), row(r, 0);
     for (int i = 0; i < r; ++i) {
         for (int j = 0; j < c; ++j) {
-                
+            char cell;
+            cin >> cell;
+            if (cell == 'X') {
+                row[i] = 1;
+                col[j] = 1;
+            }
         }
     }
+ 
+    int row_rubble = accumulate(row.begin(), row.end(), 0);
+    int col_rubble = accumulate(col.begin(), col.end(), 0);
+ 
+    cout << min(row_rubble, col_rubble) << '\n';
 }
 
 int main() {
