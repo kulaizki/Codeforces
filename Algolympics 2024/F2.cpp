@@ -33,10 +33,8 @@ void solve(int tc = 0) {
         a[v[i]] = 1;
         greatest = max(v[i], greatest); 
         for (int j = v[i]; j < greatest; ++j) {
-            if (a[j] == 1) res.push_back()
         }
     }
-
 }
 
 int main() {
