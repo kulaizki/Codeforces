@@ -23,46 +23,46 @@ void solve(int tc = 0) {
     int n;
     cin >> n;
 
-    vector<int> v(n);
+    // if (n == 0) {
+    //     cout << 1 << '\n';
+    //     return;
+    // }
+
+    vector<int> a(n);
     vector<pair<int, int>> p(n);
 
     for (int i = 0; i < n; ++i) {
-        cin >> v[i];
+        cin >> a[i];
         p[i].first = i;
-        p[i].second = v[i];
+        p[i].second = a[i];
     }
 
     sort(p.begin(), p.end(), [](const auto &x, const auto &y) {
         return x.second < y.second;
     });
 
-    cout << "Sorted Pairs\n";
-    for (const auto &x : p) {
-        cout << x.first << ": " << x.second << '\n';
-    }
-
     int l, r, m;
     vector<int> b(n);
     for (int i = n - 1; i >= 0; --i) {
         l = 0, r = n - 1;
-        while (l < r) {
+        while (l <= r) {
             m = l + (r - l) / 2;
-            if (p[m].second > v[i]) {
+            if (p[m].second > a[i]) {
                 r = m - 1;
-            } else if (p[m].second < v[i]) {
+            } else if (p[m].second < a[i]) {
                 l = m + 1;
             } else {
                 break;
-            }
+            }   
         }
-        int j;
-        for (j = m + 1; j < n && p[j].second == p[m].second && i >= p[j].first; ++j) {}
+        int j;  
+        for (j = m + 1; j < n && (i >= p[j].first || a[p[j].first] == a[i]); ++j) {}
         b[i] = j != n ? p[j].first + 1 : i + 1;
     }
 
     for (const auto &x : b) cout << x << ' ';
 
-    cout << '\n';
+    cout << endl;
 }
 
 int main() {
