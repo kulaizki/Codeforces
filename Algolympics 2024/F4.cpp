@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
@@ -20,7 +21,24 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
+    int n;
+    cin >> n;
 
+    vector<int> a(n);
+    for (auto &x : a) cin >> x;
+
+    vector<int> b(n, -1);
+    stack<int> s;
+    for (int i = n - 1; i >= 0; --i) {
+        while (!s.empty() && a[i] > a[s.top()]) {
+            b[s.top()] = i;
+            s.pop();
+        }
+        s.push(i);
+    }
+
+    for (const auto &x : b) cout << x << ' ';
+    cout << '\n';
 }
 
 int main() {
