@@ -23,11 +23,6 @@ void solve(int tc = 0) {
     int n;
     cin >> n;
 
-    // if (n == 0) {
-    //     cout << 1 << '\n';
-    //     return;
-    // }
-
     vector<int> a(n);
     vector<pair<int, int>> p(n);
 
