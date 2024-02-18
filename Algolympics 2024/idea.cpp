@@ -25,19 +25,27 @@ void solve(int tc = 0) {
     int a[n];
     for (auto &x : a) cin >> x;
 
-    for (int i = 0; i < n; ++i) {
-        int idx = -1;
-        for (int j = i + 1; j < n; ++j) {
-            if (a[j] > a[i]) {
-                if (idx == -1) {
-                    idx = j;
-                } else if (a[j] < a[idx]) {
-                    idx = j;
+    int b[n], greatest = n - 1;
+    for (int i = n - 1; i >= 0; --i) {
+        if (a[i] >= a[greatest]) {
+            greatest = i;
+            b[i] = i;
+        } else {
+            int least = i;
+            for (int j = i + 1; j < n; ++j) {
+                if (a[j] > a[i]) {
+                    if (least == i) {
+                        least = j;
+                    } else if (a[j] < a[least]) {
+                        least = j;
+                    }
                 }
             }
+            b[i] = least;
         }
-        cout << (idx == -1 ? i + 1 : idx + 1) << ' ';
     }
+
+    for (const auto &x : b) cout << x + 1 << ' ';
 
     cout << '\n';
 }

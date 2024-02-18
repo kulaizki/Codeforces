@@ -20,28 +20,8 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    int n;
-    cin >> n;
-    int a[n];
-    for (auto &x : a) cin >> x;
 
-    for (int i = 0; i < n; ++i) {
-        int idx = -1;
-        for (int j = i + 1; j < n; ++j) {
-            if (a[j] > a[i]) {
-                if (idx == -1) {
-                    idx = j;
-                } else if (a[j] < a[idx]) {
-                    idx = j;
-                }
-            }
-        }
-        cout << (idx == -1 ? i + 1 : idx + 1) << ' ';
-    }
-
-    cout << '\n';
 }
-
 
 int main() {
 
