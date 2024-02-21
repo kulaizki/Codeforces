@@ -20,13 +20,13 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    ll n;
+    int n;
     cin >> n;
 
-    vector<ll> a(n);
-    vector<pair<ll, ll>> p(n);
+    vector<int> a(n);
+    vector<pair<int, int>> p(n);
 
-    for (ll i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
         cin >> a[i];
         p[i].first = i;
         p[i].second = a[i];
@@ -39,9 +39,9 @@ void solve(int tc = 0) {
         return x.second < y.second;  
     });
 
-    ll l, r, m;
-    vector<ll> b(n);
-    for (ll i = n - 1; i >= 0; --i) {
+    int l, r, m;
+    vector<int> b(n);
+    for (int i = n - 1; i >= 0; --i) {
         l = 0, r = n - 1;
         while (l <= r) {
             m = l + (r - l) / 2;
@@ -53,14 +53,14 @@ void solve(int tc = 0) {
                 break;
             }   
         }
-        ll j;  
-        for (j = m + 1; j < n && (i >= p[j].first || a[p[j].first] == a[i]); ++j) {}
+        int j;  
+        for (j = m + 1; j < n && (i > p[j].first || a[p[j].first] == a[i]); ++j) {}
         b[i] = j != n ? p[j].first + 1 : i + 1;
     }
-    for (const auto &x : b) cout << x << ' ';
-    // for (const auto &x : p) cout << x.first << ' ' << x.second << '\n';
 
-    cout << endl;
+    for (const auto &x : b) cout << x << ' ';
+
+    cout << '\n';
 }
 
 int main() {
