@@ -27,16 +27,47 @@ void solve(int tc = 0) {
     for (auto &x : b) cin >> x;
 
     int ha, ma, sa, hb, mb, sb;
+    vector<int> timeA(n);
+    vector<int> timeB(n);
     for (int i = 0; i < n; ++i) {
-        ha = a[j][0] * 10 + a[j][1];
-        ma = a[j][3] * 10 + a[j][4];
-        sa = a[j][6] * 10 + a[j][7];
-        for (int j = 0; j < n; ++j) {
-            hb = b[j][0] * 10 + b[j][1];
-            mb = b[j][3] * 10 + b[j][4];
-            sb = b[j][6] * 10 + b[j][7];
-        }
+        ha = a[i][0] * 10 + a[i][1] + 1000;
+        ma = a[i][3] * 10 + a[i][4] + 100;
+        sa = a[i][6] * 10 + a[i][7] + 10;
+        hb = b[i][0] * 10 + b[i][1] + 1000;
+        mb = b[i][3] * 10 + b[i][4] + 100;
+        sb = b[i][6] * 10 + b[i][7] + 10;
+        timeA[i] = ha + ma + sa;
+        timeB[i] = hb + mb + sb; 
     }
+
+    sort(timeA.begin(), timeA.end());
+    sort(timeB.begin(), timeB.end());
+
+    vector<int> diffA(n - 1);
+    vector<int> diffB(n - 1);
+    for (int i = 0; i < n - 1; ++i) {
+        diffA[i] = timeA[i + 1] - timeA[i];
+        diffB[i] = timeB[i + 1] - timeB[i];
+    }
+    cout << '\n';
+    for (const auto &x : a) cout << x << ' ';
+    cout << '\n';
+    for (const auto &x : b) cout << x << ' ';
+
+    // cout << '\n';
+    // for (const auto &x : timeA) cout << x << ' ';
+    // cout << '\n';
+    // for (const auto &x : timeB) cout << x << ' ';
+
+    // cout << '\n';
+    // for (const auto &x : timeA) cout << x << ' ';
+    // cout << '\n';
+    // for (const auto &x : timeB) cout << x << ' ';
+
+    // cout << '\n';
+    // for (const auto &x : timeA) cout << x << ' ';
+    // cout << '\n';
+    // for (const auto &x : timeB) cout << x << ' ';
 }
 
 int main() {
