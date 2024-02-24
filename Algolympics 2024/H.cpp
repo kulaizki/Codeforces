@@ -57,7 +57,7 @@ void solve(int tc = 0) {
 
     int ans = n - 1;
     for (int i = 0; i < n - 1; ++i) {
-
+        
     }
 
     // cout << '\n';
