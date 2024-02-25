@@ -60,15 +60,15 @@ void solve(int tc = 0) {
         
     }
 
-    // cout << '\n';
-    // for (const auto &x : a) cout << x << ' ';
-    // cout << '\n';
-    // for (const auto &x : b) cout << x << ' ';
+    cout << '\n';
+    for (const auto &x : a) cout << x << ' ';
+    cout << '\n';
+    for (const auto &x : b) cout << x << ' ';
 
-    // cout << '\n';
-    // for (const auto &x : timeA) cout << x << ' ';
-    // cout << '\n';
-    // for (const auto &x : timeB) cout << x << ' ';
+    cout << '\n';
+    for (const auto &x : timeA) cout << x << ' ';
+    cout << '\n';
+    for (const auto &x : timeB) cout << x << ' ';
 
     cout << '\n';
     for (const auto &x : diffA) cout << x << ' ';
