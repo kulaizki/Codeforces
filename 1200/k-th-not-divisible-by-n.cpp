@@ -22,8 +22,9 @@ void solve(int tc = 0) {
 
     int n, k;
     cin >> n >> k;
-
-    cout << "test result";
+    
+    int need = (k - 1) / (n - 1);
+    cout << k + need << '\n';
 }
 
 int main() {
