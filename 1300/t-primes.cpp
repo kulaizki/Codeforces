@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <set>
 
 using namespace std;
 
@@ -20,21 +21,34 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    int n;
+    ll n;
     cin >> n;
-    int tp = 0;
-    for (int i = 0; i < n; ++i) {
-        int x;
-        cin >> x;
-        
+    vector<bool> prime(1e6 + 1, true);
+    for (ll p = 2; p * p <= 1000001; ++p) {
+        if (prime[p] == true) {
+            for (ll i = p * p; i <= 1e6; i += p) {
+                prime[i] = false;
+            }
+        }
+    }
+    set<ll> tprimes;
+    for (ll p = 2; p <= 1e6; ++p) {
+        if (prime[p]) {
+            tprimes.insert(p * p);
+        }
     }
 
+    vector<ll> a(n);
+    for (auto &x : a) {
+        cin >> x;
+        cout << (tprimes.find(x) != tprimes.end() ? "YES" : "NO") << '\n';
+    }
 }
 
 int main() {
 
     kulaizki
     int tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
 }
