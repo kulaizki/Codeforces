@@ -21,10 +21,8 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    ll n;
-    cin >> n;
     vector<bool> prime(1e6 + 1, true);
-    for (ll p = 2; p * p <= 1000001; ++p) {
+    for (ll p = 2; p * p <= 1e6; ++p) {
         if (prime[p] == true) {
             for (ll i = p * p; i <= 1e6; i += p) {
                 prime[i] = false;
@@ -38,6 +36,8 @@ void solve(int tc = 0) {
         }
     }
 
+    ll n;
+    cin >> n;
     vector<ll> a(n);
     for (auto &x : a) {
         cin >> x;
