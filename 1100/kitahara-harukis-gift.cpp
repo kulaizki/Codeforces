@@ -23,7 +23,7 @@ void solve(int tc = 0) {
     int n;
     cin >> n;
 
-    int one = 0, two = 0;
+    int one = 0, two = 0, sum = 0;
     for (int i = 0; i < n; ++i) {
         int x;
         cin >> x;
@@ -32,9 +32,20 @@ void solve(int tc = 0) {
         } else {
             two++;
         }
+        sum += x;
     }
 
-    cout << (abs(one - two) & 1 || n == 1 ? "NO" : "YES") << '\n';
+    if (sum / 100 & 1 || n == 1) {
+        cout << "NO\n";
+    } else {
+        if (!(one & 1) && two & 1 && one) {
+            cout << "YES\n";
+        } else if (one == two || !(one &1 ) && !(two & 1)) {
+            cout << "YES\n";
+        } else {
+            cout << "NO\n";
+        }
+    }
 }
 
 int main() {
