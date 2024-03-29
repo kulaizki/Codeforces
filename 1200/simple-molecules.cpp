@@ -27,9 +27,9 @@ void solve(int tc = 0) {
     if (sum & 1){ 
         cout << "Impossible\n";
     } else {
+        int x = (a + b - c) / 2;
         int y = (b + c - a) / 2;
         int z = (c + a - b) / 2;
-        int x = (b + a - c) / 2;
         if (x >= 0 && y >= 0 && z >= 0) {
             cout << x << ' ' << y << ' ' << z << '\n';
         } else {
