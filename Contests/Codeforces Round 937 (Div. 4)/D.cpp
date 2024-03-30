@@ -1,9 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <string>
-#include <stdlib.h>
-#include <set>
 
 using namespace std;
 
@@ -17,44 +13,46 @@ typedef unsigned long long ull;
 
 const ll template_array_size = 1e6 + 585;
 const lld pi = 3.14159265358979323846;
-// const ll mod = 1000000007;
-// const ll mod = 998244353;
-// ll mod;
+const int MAX = 100'007;
 
-void solve(int tc = 0) {
+vector<int> binary_decimals;
+
+bool ok(int n) {
+
+    if (n == 1) { return true; }
+    bool ans = false;
+    for (int i : binary_decimals) {
+        if (n % i == 0) {
+            ans |= ok(n / i);
+        }
+    }
+
+    return ans;
+}
+
+void solve(int tc) {
 
     int n;
     cin >> n;
-    
-    int m, cnt, digits;
-    while (n) {
-        m = n;
-        cnt = 0;
-        digits = 0;
-        while (m) {
-            int x = m % 10;
-            if (x == 0 || x == 1) {
-                cnt++;
-            }
-            digits++;
-            m /= 10;
-        }
-        cout << cnt << ' ' << digits << '\n';
-        if (cnt == digits) break;
-        if (n % 11 != 0) {
-            cout << "NO\n";
-            return;
-        }
-        n /= 11;
-    }
-
-    cout << (n ? "YES" : "NO") << '\n';
+    cout << (ok(n) ? "YES\n" : "NO\n");  
 }
 
 int main() {
 
     kulaizki
-    int tc = 1;
+    for (int i = 2; i < MAX; i++) {
+        int curr = i;
+        bool bad = false;
+        while (curr) {
+            if (curr % 10 > 1) {bad = true; break;}
+            curr /= 10;
+        }
+        if (!bad) {binary_decimals.push_back(i);}
+    }
+    
+    int tc;
     cin >> tc;
-    for (int t = 0; t < tc; t++) solve(t);
+    for (int t = 0; t < tc; t++) {
+        solve(t);
+    }
 }
