@@ -1,0 +1,13 @@
+- sort/bitwise is fast
+- bitvector/set is fast
+- lambda op (especially for sorting)
+- absolute difference (for distance)
+- construction using pub/construct then compare
+- long long for >10^9
+- sometimes, we don't need a list
+- two pointers
+- binary search
+- operation = DP x >> 1 == x / 2, but faster
+- x & 1 == x % 2 == 1, but faster
+- 1 << x == 2^x
+- strict subtasks for bruteforce
