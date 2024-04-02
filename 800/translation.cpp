@@ -20,12 +20,10 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-    string s, t, x = "";
+    string s, t, x;
     cin >> s >> t;
-
-    for (int i = s.size() - 1; i >= 0; --i) {
-        x += s[i];
-    }
+    x = s;
+    reverse(x.begin(), x.end());
     
     cout << (t == x ? "YES\n" : "NO\n");
 }
