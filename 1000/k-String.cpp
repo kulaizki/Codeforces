@@ -25,7 +25,7 @@ void solve(int tc = 0) {
     string s;
     cin >> s;
 
-    
+    //
 
 }
 
