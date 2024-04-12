@@ -23,7 +23,7 @@ void solve(int tc = 0) {
     int s, n;
     cin >> s >> n;
 
-    vector< pair<int, int> > v(n);
+    vector<pair<int, int>> v(n);
     for (int i = 0; i < n; ++i) {
         cin >> v[i].first;
         cin >> v[i].second;
