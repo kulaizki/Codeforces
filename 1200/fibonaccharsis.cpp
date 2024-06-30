@@ -18,7 +18,7 @@ const lld pi = 3.14159265358979323846;
 
 void solve(int tc = 0) {
 
-        
+    cout << "test";
 
 }
 
