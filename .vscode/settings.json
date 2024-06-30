@@ -14,6 +14,8 @@
         "regex": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "__split_buffer": "cpp",
+        "list": "cpp"
     }
 }
