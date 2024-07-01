@@ -23,19 +23,20 @@ void solve(int tc = 0) {
     int n, t;
     cin >> n >> t;
 
-    int cnt = 0, sum = 0, ans = 0;
+    vector<int> a(n);
+    for (auto &x : a) cin >> x;
+
+    int ans = INT_MIN;
     for (int i = 0; i < n; ++i) {
-        int x;
-        cin >> x;
-        if (sum + x > t) {
-            ans = max(cnt, ans);
-            cnt = 0; sum = 0;
-            continue;
+        int cnt = 0, sum = 0;
+        for (int j = i; j < n ; ++j) {
+            sum += a[j];
+            if (sum > t) break;
+            cnt++;
         }
-        sum += x;
-        cnt++;
+        ans = max(cnt, ans);
     }
-    
+
     cout << ans << endl;    
 }
 
