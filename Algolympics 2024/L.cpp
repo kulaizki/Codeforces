@@ -1,62 +1,61 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
- 
+
 int main() {
 
-    vector<bool> irregular(21, false);
-    vector<bool> geniuses(21, false);
+    vector<string> answers(11);
     vector<int> imposters;
-    int x = 1, y = 2, regular = -1;
-    string first, second;   
+    int regular = -1;
 
-    while (regular == -1) {
-        cout << "QUERY " << x << " " << y << endl;
+    int i;
+    for (i = 1; i <= 11 && regular == -1; ++i) {
+        cout << "QUERY " << i << " " << ((i == 1) ? 2 : 1) << endl;
+        string first, second;
         cin >> first >> second;
         if (first == "NO") {
-            regular = x;
-        } else if (second == "NO") {
-            geniuses[x] = true;
+            regular = i;
         } else {
-            irregular[x] = true;
+            answers[i] = second;
         }
-        x++; y++;
     }
 
-    for (int i = 1; i <= 20; ++i) {
-        if (irregular[i] && !geniuses[i]) {
-            cout << "QUERY " << i << " " << regular << endl;
-            cin >> first >> second;
-            if (second == "YES") {
-                imposters.push_back(i);
-                irregular[i] = true;
-            };
+    if (regular != 1) {
+        cout << "QUERY 1 " << regular << endl;
+        string first, second;
+        cin >> first >> second;
+        if (second == "YES") {
+            imposters.push_back(1);
+            for (int j = 1; j < regular; ++j) {
+                if (answers[j] == "YES") {
+                    imposters.push_back(j);
+                }
+            }
+        } else {
+            for (int j = 1; j < regular; ++j) {
+                if (answers[j] == "YES") {
+                    imposters.push_back(j);
+                }
+            }
         }
+    }
+
+    for (; i <= 20; ++i) {
+        cout << "QUERY " << i << " " << regular << endl;
+        string first, second;
+        cin >> first >> second;
+        if (second == "YES") {
+            imposters.push_back(i);
+        } 
     }
 
     cout << "ANSWER";
-    for (const auto& sus : imposters) {
-        cout << " " << sus;
+    for (const auto &x : imposters) {
+        cout << " " << x;
     }
 
     cout << endl;
-    // while (regular < 1 && genius < 1 && count < 21) {
-    //     cout << "QUERY " << x << " " << y << endl;
-    //     count++;
-    //     cin >> first >> second;
-    //     if (first == "NO") {
-    //         regular = x;
-    //         x = 1;
-    //     } else if (first == "YES" && second == "NO") {
-    //         genius = x;
-    //         regular = y;
-    //         y = 1;
-    //     } else {
-    //         x = ((y + 345) % 20) + 1;
-    //         y = ((x + 2) % 20) + 1;
-    //     }
-    // }
-
 }
