@@ -21,30 +21,32 @@ void solve(int tc = 0) {
     int s, b;
     cin >> s >> b;
 
-    vector<pair<int, int>> a(s);
-    vector<tuple<int, int, int>> bases(b);
-    for (int i = 0; i < s; ++i) {
-        cin >> a[i].first;
-        a[i].second = i;
-    }
-    for (int i = 0 ; i < b; ++i) {
-        int d, g;
-        cin >> d >> g;
-        bases[i] = {d, g, i};
-    }
+    vector<int> a(s);
+    vector<pair<int, int>> bases(b);
 
-    sort(a.begin(), a.end());
+    for (int &x : a) cin >> x;
+    for (auto &x : bases) cin >> x.first >> x.second;
     sort(bases.begin(), bases.end());
 
-    vector<int> ans(s, 0);    
+    vector<int> ps(b);
     for (int i = 0; i < b; ++i) {
-        auto it = lower_bound(a.begin(), a.end(), make_pair(get<0>(bases[i]), 0));
-        for (; it != a.end(); ++it) {
-            ans[it->second] += get<1>(bases[i]);
-        }
+        ps[i] = (i ? ps[i - 1] + bases[i].second : bases[i].second);
     }
 
-    poof(ans); 
+    for (int i = 0; i < s; ++i) {
+        int l = 0, h = b - 1;
+        int ans = 0;
+        while (l <= h) {
+            int m = l + (h - l) / 2; 
+            if (bases[m].first <= a[i]) {
+                ans = ps[m];
+                l = m + 1;
+            } else {
+                h = m - 1;
+            }
+        }
+        cout << ans << ' ';
+    }
 
     cout << endl;
 }
