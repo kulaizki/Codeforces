@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <tuple>
 
 using namespace std;
 
@@ -14,9 +15,6 @@ typedef unsigned long long ull;
 
 const ll template_array_size = 1e6 + 585;
 const lld pi = 3.14159265358979323846;
-// const ll mod = 1000000007;
-// const ll mod = 998244353;
-// ll mod;
 
 void solve(int tc = 0) {
 
@@ -24,23 +22,29 @@ void solve(int tc = 0) {
     cin >> s >> b;
 
     vector<pair<int, int>> a(s);
+    vector<tuple<int, int, int>> bases(b);
     for (int i = 0; i < s; ++i) {
         cin >> a[i].first;
         a[i].second = i;
     }
+    for (int i = 0 ; i < b; ++i) {
+        int d, g;
+        cin >> d >> g;
+        bases[i] = {d, g, i};
+    }
 
     sort(a.begin(), a.end());
+    sort(bases.begin(), bases.end());
 
     vector<int> ans(s, 0);    
     for (int i = 0; i < b; ++i) {
-        int d, g;
-        cin >> d >> g;
-        for (int j = s - 1; j >= 0 && a[j].first >= d; --j) {
-            ans[a[j].second] += g;
+        auto it = lower_bound(a.begin(), a.end(), make_pair(get<0>(bases[i]), 0));
+        for (; it != a.end(); ++it) {
+            ans[it->second] += get<1>(bases[i]);
         }
     }
 
-    for (const auto &x : ans) cout << x << ' ';
+    poof(ans); 
 
     cout << endl;
 }
@@ -49,6 +53,5 @@ int main() {
 
     kulaizki
     int tc = 1;
-    // cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
-}    
+}
