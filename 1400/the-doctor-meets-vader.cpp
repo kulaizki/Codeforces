@@ -23,17 +23,20 @@ void solve(int tc = 0) {
     int s, b;
     cin >> s >> b;
 
-    vector<int> a(s);
-    for (int &x : a) cin >> x;
+    vector<pair<int, int>> a(s);
+    for (int i = 0; i < s; ++i) {
+        cin >> a[i].first;
+        a[i].second = i;
+    }
+
+    sort(a.begin(), a.end());
 
     vector<int> ans(s, 0);    
     for (int i = 0; i < b; ++i) {
         int d, g;
         cin >> d >> g;
-        for (int j = 0; j < s; ++j) {
-            if (a[j] >= d) {
-                ans[j] += g;
-            }
+        for (int j = s - 1; j >= 0 && a[j].first >= d; --j) {
+            ans[a[j].second] += g;
         }
     }
 
@@ -48,4 +51,4 @@ int main() {
     int tc = 1;
     // cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
-}
+}    
