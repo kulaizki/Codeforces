@@ -24,8 +24,8 @@ void solve(int tc = 0) {
     vector<int> a(s);
     vector<pair<int, int>> bases(b);
 
-    for (int &x : a) cin >> x;
-    for (auto &x : bases) cin >> x.first >> x.second;
+    for (int& x : a) cin >> x;
+    for (auto& x : bases) cin >> x.first >> x.second;
     sort(bases.begin(), bases.end());
 
     vector<int> ps(b);
@@ -55,6 +55,5 @@ int main() {
 
     kulaizki
     int tc = 1;
-    cin >> tc;
     for (int t = 0; t < tc; t++) solve(t);
 }
