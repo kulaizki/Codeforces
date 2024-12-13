@@ -34,7 +34,7 @@ int main() {
                     imposters.push_back(j);
                 }
             }
-        } else {
+        } else { // placeholder
             for (int j = 1; j < regular; ++j) {
                 if (answers[j] == "YES") {
                     imposters.push_back(j);

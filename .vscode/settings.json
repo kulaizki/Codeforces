@@ -16,6 +16,7 @@
         "valarray": "cpp",
         "ios": "cpp",
         "__split_buffer": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "ostream": "cpp"
     }
 }
