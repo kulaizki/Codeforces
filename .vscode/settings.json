@@ -1,22 +1,6 @@
 {
-    "files.associations": {
-        "numeric": "cpp",
-        "iostream": "cpp",
-        "deque": "cpp",
-        "string": "cpp",
-        "vector": "cpp",
-        "array": "cpp",
-        "bitset": "cpp",
-        "string_view": "cpp",
-        "initializer_list": "cpp",
-        "ranges": "cpp",
-        "span": "cpp",
-        "regex": "cpp",
-        "utility": "cpp",
-        "valarray": "cpp",
-        "ios": "cpp",
-        "__split_buffer": "cpp",
-        "list": "cpp",
-        "ostream": "cpp"
-    }
+  "files.associations": {
+    "ios": "cpp",
+    "tuple": "cpp"
+  }
 }
