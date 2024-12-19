@@ -2,6 +2,7 @@
   "files.associations": {
     "ios": "cpp",
     "tuple": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "iostream": "cpp"
   }
 }
