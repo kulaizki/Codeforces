@@ -33,7 +33,7 @@ void solve() {
 int main() {
     kulaizki
 
-    // fill up memo table from lb to ub
+    // fill up memo table from 1 to max
     psum[0] = 0;
     for (int i = 1; i < MAX - 1; i++) {
         a[i] = f(i);
