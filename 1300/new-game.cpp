@@ -17,40 +17,30 @@ typedef unsigned long long ull;
 // const MAX = 200'007;
 
 void solve() {
-
     int n, k;
     cin >> n >> k;
 
-    vector<int> a(n), b;
-    unordered_map<int, int> mp;
+    vector<int> a(n);
     for (int i = 0; i < n; ++i) {
         cin >> a[i];
-        if (mp[a[i]] == 0) {
-            b.push_back(a[i]);
-        }
-        mp[a[i]]++;
     }
 
-    sort(b.begin(), b.end());
+    sort(a.begin(), a.end()); 
 
-    n = b.size();
-    int max_sum = mp[b[0]];
-    int curr_sum = mp[b[0]];
-    int j = 1;
-    for (int i = 1; i < n; ++i, ++j) {
-        if (j == k || b[i] - b[i - 1] != 1) {
-            j = 1;
-            max_sum = max(curr_sum, max_sum);
-            curr_sum = mp[b[i]];
-        } else {
-            curr_sum += mp[b[i]];
+    int ans = 0;
+    int j = 0;
+
+    for (int i = 0; i < n; ++i) {
+        j = max(i, j);
+        while (j + 1 < n && a[j + 1] - a[j] <= 1 && a[j + 1] - a[i] < k) {
+            j++;
         }
+        ans = max(ans, j - i + 1);
     }
 
-    max_sum = max(curr_sum, max_sum);
-
-    cout << max_sum << '\n';
+    cout << ans << '\n';
 }
+
 
 int main() {
 
