@@ -1,3 +1,5 @@
+- use input range (max/min) of a problem outside main to calculate ahead
+- dp for time
 - sort/bitwise is fast
 - bitvector/set is fast
 - lambda op (especially for sorting)
