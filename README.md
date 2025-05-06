@@ -200,32 +200,64 @@ A compilation of Codeforces problems I've solved.
 - [the-doctor-meets-vader](1400/the-doctor-meets-vader.cpp)
 
 ### Contests
+
+#### Codeforces Global Round 28	
+- [A](Contests/Codeforces%20Global%20Round%2028%09/A.cpp)
+- [C](Contests/Codeforces%20Global%20Round%2028%09/C.cpp)
+- [B](Contests/Codeforces%20Global%20Round%2028%09/B.cpp)
+- [D](Contests/Codeforces%20Global%20Round%2028%09/D.cpp)
+
+#### Codeforces Round 993 (Div. 4)
 - [A](Contests/Codeforces%20Round%20993%20(Div.%204)/A.cpp)
 - [C](Contests/Codeforces%20Round%20993%20(Div.%204)/C.cpp)
 - [B](Contests/Codeforces%20Round%20993%20(Div.%204)/B.cpp)
 - [D](Contests/Codeforces%20Round%20993%20(Div.%204)/D.cpp)
-- [A](Contests/Codeforces%20Round%20858%20Div.%202/A.cpp)
-- [B](Contests/Codeforces%20Round%20858%20Div.%202/B.cpp)
-- [A](Contests/Codeforces%20Round%20885%20(Div.%202)/A.cpp)
+
+#### CodeTON Round 8 (Div. 1 + Div. 2)
+- [A](Contests/CodeTON%20Round%208%20(Div.%201%20+%20Div.%202)/A.cpp)
+- [B](Contests/CodeTON%20Round%208%20(Div.%201%20+%20Div.%202)/B.cpp)
+
+#### Codeforces Round 937 (Div. 4)
+- [A](Contests/Codeforces%20Round%20937%20(Div.%204)/A.cpp)
+- [C](Contests/Codeforces%20Round%20937%20(Div.%204)/C.cpp)
+- [B](Contests/Codeforces%20Round%20937%20(Div.%204)/B.cpp)
+- [D](Contests/Codeforces%20Round%20937%20(Div.%204)/D.cpp)
+
+#### Codeforces Round 933 (Div. 3)
 - [A](Contests/Codeforces%20Round%20933%20(Div.%203)/A.cpp)
 - [C](Contests/Codeforces%20Round%20933%20(Div.%203)/C.cpp)
 - [B](Contests/Codeforces%20Round%20933%20(Div.%203)/B.cpp)
-- [A](Contests/Codeforces%20Round%20886%20(Div.%204)/A.cpp)
-- [C](Contests/Codeforces%20Round%20886%20(Div.%204)/C.cpp)
-- [B](Contests/Codeforces%20Round%20886%20(Div.%204)/B.cpp)
-- [D](Contests/Codeforces%20Round%20886%20(Div.%204)/D.cpp)
-- [A](Contests/Codeforces%20Round%20892%20(Div.%202)/A.cpp)
-- [B](Contests/Codeforces%20Round%20892%20(Div.%202)/B.cpp)
+
+#### Codeforces Round 925 (Div. 3)
 - [A](Contests/Codeforces%20Round%20925%20(Div.%203)/A.cpp)
 - [C](Contests/Codeforces%20Round%20925%20(Div.%203)/C.cpp)
 - [B](Contests/Codeforces%20Round%20925%20(Div.%203)/B.cpp)
 - [F](Contests/Codeforces%20Round%20925%20(Div.%203)/F.cpp)
 - [E](Contests/Codeforces%20Round%20925%20(Div.%203)/E.cpp)
-- [A](Contests/Edu%20Codeforces%20Round%20153%20(Div.%202)/A.cpp)
-- [A](Contests/Harbour.Space%20Scholarship%202023-2024%20(Div.%201%20+%20Div.%202)/A.cpp)
+
+#### Codeforces Round 888 (Div. 3)
+- [A](Contests/Codeforces%20Round%20888%20(Div.%203)/A.cpp)
+- [B](Contests/Codeforces%20Round%20888%20(Div.%203)/B.cpp)
+
+#### Codeforces Round 889 (Div. 2)
 - [A](Contests/Codeforces%20Round%20889%20(Div.%202)/A.cpp)
 - [B](Contests/Codeforces%20Round%20889%20(Div.%202)/B.cpp)
-- [A](Contests/Codeforces%20Round%20890%20(Div.%202)/A.cpp)
+
+#### Codeforces Round 884 (Div. 1 + Div. 2)
+- [A](Contests/Codeforces%20Round%20884%20(Div.%201%20+%20Div.%202)/A.cpp)
+- [C](Contests/Codeforces%20Round%20884%20(Div.%201%20+%20Div.%202)/C.cpp)
+- [B](Contests/Codeforces%20Round%20884%20(Div.%201%20+%20Div.%202)/B.cpp)
+
+#### Codeforces Round 885 (Div. 2)
+- [A](Contests/Codeforces%20Round%20885%20(Div.%202)/A.cpp)
+
+#### Codeforces Round 886 (Div. 4)
+- [A](Contests/Codeforces%20Round%20886%20(Div.%204)/A.cpp)
+- [C](Contests/Codeforces%20Round%20886%20(Div.%204)/C.cpp)
+- [B](Contests/Codeforces%20Round%20886%20(Div.%204)/B.cpp)
+- [D](Contests/Codeforces%20Round%20886%20(Div.%204)/D.cpp)
+
+#### Codeforces Round 859 Div. 4
 - [A](Contests/Codeforces%20Round%20859%20Div.%204/A.cpp)
 - [C](Contests/Codeforces%20Round%20859%20Div.%204/C.cpp)
 - [B](Contests/Codeforces%20Round%20859%20Div.%204/B.cpp)
@@ -235,15 +267,18 @@ A compilation of Codeforces problems I've solved.
 - [D-idea](Contests/Codeforces%20Round%20859%20Div.%204/D-idea.cpp)
 - [G_2](Contests/Codeforces%20Round%20859%20Div.%204/G_2.cpp)
 - [G_1](Contests/Codeforces%20Round%20859%20Div.%204/G_1.cpp)
-- [A](Contests/Codeforces%20Round%20888%20(Div.%203)/A.cpp)
-- [B](Contests/Codeforces%20Round%20888%20(Div.%203)/B.cpp)
-- [A](Contests/Codeforces%20Round%20894%20(Div.%203)/A.cpp)
-- [A](Contests/CodeTON%20Round%208%20(Div.%201%20+%20Div.%202)/A.cpp)
-- [B](Contests/CodeTON%20Round%208%20(Div.%201%20+%20Div.%202)/B.cpp)
-- [A](Contests/Codeforces%20Round%20937%20(Div.%204)/A.cpp)
-- [C](Contests/Codeforces%20Round%20937%20(Div.%204)/C.cpp)
-- [B](Contests/Codeforces%20Round%20937%20(Div.%204)/B.cpp)
-- [D](Contests/Codeforces%20Round%20937%20(Div.%204)/D.cpp)
+
+#### Codeforces Round 858 Div. 2
+- [A](Contests/Codeforces%20Round%20858%20Div.%202/A.cpp)
+- [B](Contests/Codeforces%20Round%20858%20Div.%202/B.cpp)
+
+#### Edu Codeforces Round 153 (Div. 2)
+- [A](Contests/Edu%20Codeforces%20Round%20153%20(Div.%202)/A.cpp)
+
+#### Harbour.Space Scholarship 2023-2024 (Div. 1 + Div. 2)
+- [A](Contests/Harbour.Space%20Scholarship%202023-2024%20(Div.%201%20+%20Div.%202)/A.cpp)
+
+#### Codeforces Round 918 (Div. 4)
 - [A](Contests/Codeforces%20Round%20918%20(Div.%204)/A.cpp)
 - [C](Contests/Codeforces%20Round%20918%20(Div.%204)/C.cpp)
 - [B](Contests/Codeforces%20Round%20918%20(Div.%204)/B.cpp)
@@ -251,13 +286,16 @@ A compilation of Codeforces problems I've solved.
 - [G](Contests/Codeforces%20Round%20918%20(Div.%204)/G.cpp)
 - [E](Contests/Codeforces%20Round%20918%20(Div.%204)/E.cpp)
 - [D](Contests/Codeforces%20Round%20918%20(Div.%204)/D.cpp)
-- [A](Contests/Codeforces%20Global%20Round%2028%20%20%20%20%20/A.cpp)
-- [C](Contests/Codeforces%20Global%20Round%2028%20%20%20%20%20/C.cpp)
-- [B](Contests/Codeforces%20Global%20Round%2028%20%20%20%20%20/B.cpp)
-- [D](Contests/Codeforces%20Global%20Round%2028%20%20%20%20%20/D.cpp)
-- [A](Contests/Codeforces%20Round%20884%20(Div.%201%20+%20Div.%202)/A.cpp)
-- [C](Contests/Codeforces%20Round%20884%20(Div.%201%20+%20Div.%202)/C.cpp)
-- [B](Contests/Codeforces%20Round%20884%20(Div.%201%20+%20Div.%202)/B.cpp)
+
+#### Codeforces Round 890 (Div. 2)
+- [A](Contests/Codeforces%20Round%20890%20(Div.%202)/A.cpp)
+
+#### Codeforces Round 892 (Div. 2)
+- [A](Contests/Codeforces%20Round%20892%20(Div.%202)/A.cpp)
+- [B](Contests/Codeforces%20Round%20892%20(Div.%202)/B.cpp)
+
+#### Codeforces Round 894 (Div. 3)
+- [A](Contests/Codeforces%20Round%20894%20(Div.%203)/A.cpp)
 
 ### Algolympics 2023
 - [redundant-metronome-test2](Algolympics%202023/redundant-metronome-test2.cpp)
